@@ -8,6 +8,7 @@
         <version>2.7.0</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
+    <packaging>pom</packaging>
     <groupId>com.emmith</groupId>
     <artifactId>demo</artifactId>
     <version>0.0.1-SNAPSHOT</version>
@@ -18,4 +19,7 @@
         <spring-cloud.version>2021.0.3</spring-cloud.version>
     </properties>
 
+    <modules>
+        <module>eureka</module>
+    </modules>
 </project>
