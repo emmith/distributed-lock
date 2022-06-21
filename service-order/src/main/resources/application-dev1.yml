@@ -1,0 +1,59 @@
+#服务端口
+server:
+  port: 8004
+
+#应用名称及验证账号
+spring:
+  application:
+    name: service-order
+  redis:
+    database: 0
+    host: 127.0.0.1
+    port: 6379
+    timeout: 2000
+    password:
+    #数据库连接配置
+  datasource:
+    #配置当前使用的数据源的操作类型
+    type: com.alibaba.druid.pool.DruidDataSource
+    #配置MySQL的驱动程序类
+    driver-class-name: org.postgresql.Driver
+    #数据库连接地址
+    url: jdbc:postgresql://localhost:5432/postgres?currentSchema=distributed_lock&useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai&nullCatalogMeansCurrent=true
+    #数据库连接用户名
+    username: postgres
+    #数据库连接密码
+    password: emmith
+    #进行数据库连接池的配置
+    dbcp2:
+      #初始化提供的连接数
+      initial-size: 32
+      #数据库连接池的最小维持连接数
+      min-idle: 32
+      #最大的连接数
+      max-total: 96
+      #等待连接获取的最大超时时间
+      max-wait-millis: 200
+      validation-query: SELECT 1
+      test-while-idle: true
+      test-on-borrow: false
+      test-on-return: false
+##自定义哨兵
+#sentinel:
+#  address:
+#    - 127.0.0.1:26379
+#    - 127.0.0.1:26479
+#    - 127.0.0.1:26579
+#  masterName: mymaster
+
+#注册中心
+eureka:
+
+  client:
+    enabled: true
+    #设置服务注册中心的URL
+    service-url:
+      defaultZone: http://localhost:8000/eureka/
+
+
+  #zooClientIp: 127.0.0.1:1

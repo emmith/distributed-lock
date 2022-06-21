@@ -21,5 +21,7 @@
 
     <modules>
         <module>eureka</module>
+        <module>api-driver</module>
+        <module>service-order</module>
     </modules>
 </project>
